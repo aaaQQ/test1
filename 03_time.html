@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>定时器</title>
+        <script src="angular.min.js"></script>
+    </head>
+    <body ng-app="app">
+    	<div ng-controller="interval">
+    		当前时间:{{msg}}<br>
+    		<input type="button" value="停止" ng-click="stop()">
+    	</div>
+    </body>
+    <script>
+    	var app = angular.module("app",[]);
+    	app.controller("myCtrl",["$scope","$timeout",function($scope,$timeout){
+    		$timeout(function(){
+    		$scope.msg = "3秒到了";
+    		},3000);
+    		}]);
+    </script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>$http请求</title>
+        <script src="angular.min.js"></script>
+    </head>
+    <body ng-app="app">
+    	<div ng-controller="myCtrl">
+    		<input type="button" value="show" ng-click="show()">
+    		
+    	</div>
+    </body>
+    <script>
+    	var app = angular.module("app",[]);
+    	app.controller("myCtrl",["$scope","$http",function($scope,$http){
+    		$scope.show = function(){
+    			$http({
+    				url:"data.php",
+    				method:"post"
+    			}).success(function(result){
+
+    			});
+    		}
+    	}]);
+    </script>
+</html>

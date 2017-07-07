@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>自定义过滤器字母大小写反转</title>
+        <script src="angular.min.js"></script>
+    </head>
+    <body ng-app="app">
+		<div ng-controller="myCtrl">
+			{{"abCDeFg" | upperLowera}}
+		</div>
+    </body>
+    <script>
+    	var app = angular.module("app",[]);
+    	app.controller("myCtrl",["$scope",function($scope){
+
+    	}]);
+    	app.filter("upperLower",function(){
+    		return function(msg){
+    			var arr = msg.split("");
+    			for(var i=0;arr.length;i++){
+    				if(arr[i]==arr[i].toUpperCase()){
+    					arr[i] = arr[i].toLowerCase();
+    		}else{
+    			arr[i] = arr[i].toUpperCase();
+    		}
+    	})
+    </script>
+</html>
